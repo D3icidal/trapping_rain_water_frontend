@@ -22,8 +22,18 @@ class Container extends Component {
   }
   render() {
       return (
-          <div className="Containers">
-              Containers
+          <div className="containers">
+              ./components/Containers.js
+              {this.state.containers.map( container => {
+                    return (
+                        <div className="single-container" key={container.id}>
+                            <h4>{container.title}</h4>
+                            <p>{container.source}</p>
+                            <p>{container.heights}</p>
+                            <br/>
+                        </div>
+                    )
+                })}
           </div>
       )
   }
